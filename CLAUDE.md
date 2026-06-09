@@ -163,6 +163,13 @@ Save each piece as a `.md` file. Name files clearly: `linkedin-post.md`, `blog-p
 ### Step 6 — Create a Review Task
 After saving each piece, create a review task so a team member can review it (see Content Review Workflow below).
 
+### Step 7 — Add to the Editorial Calendar (Airtable)
+After review tasks are created, offer to add the planned pieces to the Airtable editorial calendar:
+
+> "Want me to add these to the editorial calendar in Airtable?"
+
+If yes, follow the workflow in `docs/airtable-editorial-calendar.md` (also summarized in the Airtable Editorial Calendar section below). If no, continue.
+
 ## Content Review Workflow
 
 Generated content should be reviewed by a team member before publishing. Reviews are file-based artifacts so any employee can pick one up — not just the person who generated the content.
@@ -188,6 +195,25 @@ When a user wants to review content:
   - **Approved:** set status to `approved`, move the file to `review/approved/`
   - **Changes requested:** set status to `changes-requested`, record specific notes, move to `review/changes-requested/`
 - If changes were requested, revise the content in `output/`, then create a fresh task back in `review/pending/`
+
+## Airtable Editorial Calendar
+
+The full spec lives at `docs/airtable-editorial-calendar.md`. Read it whenever the user asks anything about the editorial calendar.
+
+When the user wants to add content to a shared editorial calendar, use the Airtable MCP. On-demand only — run when the user asks (e.g., "add to the editorial calendar", "schedule this in Airtable", "what's on the calendar this week?").
+
+### The Workflow — Check, Create, or Add
+1. **Check first.** List the user's Airtable bases. Look for a base named `Marketing OS — Editorial Calendar` (or similar like "Editorial Calendar"). If found, confirm it has the `Editorial Calendar` table.
+2. **If the base exists:** add the new rows to its `Editorial Calendar` table. Never create a duplicate base.
+3. **If the base does NOT exist:** create a new base called `Marketing OS — Editorial Calendar` with one table `Editorial Calendar` using the schema in `docs/airtable-editorial-calendar.md`. Then add the rows.
+
+### When to Add or Update Rows
+- **After Step 7** of the campaign workflow: insert one row per planned piece (status `Drafted`, target date from the brief, link to the file in `output/`).
+- **When review completes:** update the matching row's status (`Approved` or `Changes Requested`). Match by `Program` + `Channel`.
+- **When content is published:** set status to `Published`.
+
+### If the Airtable MCP Is Not Connected
+Tell the user: *"I don't see an Airtable MCP connected. Connect one and I'll set up your editorial calendar."* Don't fail silently.
 
 ## Image Generation
 
