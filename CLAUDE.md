@@ -208,9 +208,12 @@ When the user wants to add content to a shared editorial calendar, use the Airta
 3. **If the base does NOT exist:** create a new base called `Marketing OS — Editorial Calendar` with one table `Editorial Calendar` using the schema in `docs/airtable-editorial-calendar.md`. Then add the rows.
 
 ### When to Add or Update Rows
-- **After Step 7** of the campaign workflow: insert one row per planned piece (status `Drafted`, target date from the brief, link to the file in `output/`).
+- **After Step 7** of the campaign workflow: insert one row per planned piece (status `Drafted`, due date set, link to the file in `output/`).
 - **When review completes:** update the matching row's status (`Approved` or `Changes Requested`). Match by `Program` + `Channel`.
 - **When content is published:** set status to `Published`.
+
+### Due Date Rule — Always Required
+Every row inserted into the editorial calendar **must** have a `Due date`. Never leave it blank. Resolve in this order: brief's activity start date → ask the user → propose a cadence if multiple pieces. Never silently default to today. Full rules in `docs/airtable-editorial-calendar.md`.
 
 ### If the Airtable MCP Is Not Connected
 Tell the user: *"I don't see an Airtable MCP connected. Connect one and I'll set up your editorial calendar."* Don't fail silently.
