@@ -1,15 +1,14 @@
 # Sales Knowledge
 
-_To be filled in by the sales team. Add objections you hear, what wins the deal, and any field insights that should inform marketing content._
+This file is maintained by the sales team. It captures insights from the field that help marketing create better content and campaigns.
 
-## Top Objections
+_Skipped during onboarding — to be filled in by the sales team._
 
-<!-- Add the most common objections here -->
+## Common Objections
+- _Add the top objections prospects raise (e.g., "why an agency vs. hiring in-house", "how is AI-native different", "can you prove pipeline impact")._
 
-## What Wins the Deal
-
-<!-- Add the key factors that tip a prospect to yes -->
+## What Wins Deals
+- _Add the patterns that close deals (proof points, the $70M+ pipeline story, Demand Activation framework, team-extension model)._
 
 ## Field Observations
-
-<!-- Add any patterns, buyer behavior, or market signals the team is seeing -->
+- _Add notes from sales conversations._

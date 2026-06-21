@@ -2,59 +2,74 @@
 
 This is the canonical spec for the Marketing OS editorial calendar in Airtable. Claude reads this file whenever the user wants to schedule, view, or update content in the calendar.
 
-## Base (live — use this one)
+## Base
 
-- **Base name:** `Content calendar` (TLM's live marketing content calendar)
-- **Base ID:** `app7ZvIagvBSN2BmA`
-- **Table name:** `📚 Content calendar`
-- **Table ID:** `tblTspUmthYXWLmvt`
-- **Single source of truth:** this is the canonical editorial calendar. Do not create a new base or table — add and update rows here.
+- **Default name:** `Marketing OS — Editorial Calendar`
+- **Discovery aliases:** also match `Editorial Calendar`, `Content Calendar`, `Content calendar`
+- **Single source of truth:** never create a duplicate. Always check first by listing bases and looking for one that matches the names above.
 
-## Table: `📚 Content calendar`
+If the team already maintains a content calendar in Airtable, **use the existing one** instead of creating a new base. Replace the IDs below the first time you connect (Claude can fetch them via `list_bases` → `list_tables_for_base` → `get_table_schema`):
 
-This is an existing team table; use its real fields and select options (don't invent new ones).
+```
+Base ID:   <fill in after first connection>
+Table ID:  <fill in after first connection>
+```
 
-| Field | Type | Field ID | Notes |
+## Default Table: `Editorial Calendar`
+
+If creating a new base, set up the table with these fields. If using an existing team table, **use its real fields and select options** — don't invent new ones.
+
+| Field | Type | Required | Description |
 |---|---|---|---|
-| `Name` | Single line text | `fldFbSZsKSugYJ9Mm` | Title of the piece, e.g. "AI GTM in 2026 — LinkedIn Post" |
-| `Status` | Single select | `fldOqiXNXajpHivYA` | `Planning`, `In progress`, `For Nati's Review`, `Text approved, waiting for graphics`, `Approved by Nati`, `On Hold`, `Posted` |
-| `Link` | Single line text | `fldmOwB6djYEdnFwo` | Path to the file in `output/` or a public URL once posted |
-| `Text` | Long text | `fldUSzqs3PgeKOL7W` | The post copy |
-| `Image` | Attachments | `fldMIyN6hulQ7zJDS` | Generated/approved image asset |
-| `Due date` | Date | `fldvacv84CbEYGMxo` | From the brief's activity start date or per-piece schedule |
-| `Channels` | Multiple selects | `fldQzpluizaVl7mcf` | `LinkedIn - Caroline`, `LinkedIn - Elad`, `LinkedIn - Elia`, `LinkedIn - Company` |
-| `Post Time (Israel)` | Single line text | `fldFQykZjdU8V6SH7` | Scheduled local post time |
-| `Pain Points` | Single line text | `fldIXRxxsvzPARD6K` | Key pain points the piece addresses |
-| `Target Audience` | Single select | `fldBjEjIIHZHK6zYl` | `Data Engineer`, `C-Level Exec (Ops)` |
+| `Title` (or `Name`) | Single line text | yes | e.g., "Signals Launch — LinkedIn Post" |
+| `Program` | Single line text | yes | Program/campaign name (must match the brief in `briefs/`) |
+| `Channel` (or `Channels`) | Single or multi-select | yes | `LinkedIn`, `X`, `Blog`, `Email`, `Facebook`, `Sales Enablement` (or the team's existing options) |
+| `Status` | Single select | yes | `Planned`, `Drafted`, `In Review`, `Approved`, `Changes Requested`, `Published` (or the team's existing lifecycle) |
+| `Due date` (or `Target Publish Date`) | Date | yes | From the brief's activity start date or per-piece schedule |
+| `Owner` | Single line text | no | Person responsible (blank by default) |
+| `Link` (or `Content Link`) | URL | no | Path to the file in `output/` or a public URL once published |
+| `Key Messages` | Long text | no | Pulled from the brief's key messages field |
+| `Notes` | Long text | no | Extra context (image prompt, dependencies, blockers) |
 
-Related tables in the same base (read-only context for now): `📈 Campaigns`, `💲 Results`, `Resources`, `Content pipeline`.
-
-### Status Lifecycle
+### Status Lifecycle (default)
 
 ```
-Planning → In progress → For Nati's Review → Approved by Nati → Posted
-                              ↓
-              Text approved, waiting for graphics (or On Hold)
+Planned → Drafted → In Review → Approved → Published
+                          ↓
+                  Changes Requested → Drafted (loop back)
 ```
 
-Mapping from the Marketing OS review workflow: `review/pending` → `For Nati's Review`; `review/approved` → `Approved by Nati`; `review/changes-requested` → back to `In progress`; published → `Posted`.
+If the team's base uses different status names (e.g., `For Review`, `Approved by [Name]`, `Posted`), map the Marketing OS lifecycle to those names instead of renaming the team's options.
 
-## Workflow — Add or Update
+## Workflow — Check, Create, or Add
 
-This base already exists and is in active use. Never create a new base or table — read and write rows in `📚 Content calendar` (base `app7ZvIagvBSN2BmA`, table `tblTspUmthYXWLmvt`).
+When the user asks anything about the editorial calendar, follow this order:
 
-### Adding rows (insert)
+### 1. List existing bases
+Call the Airtable MCP's `list_bases` (or `search_bases`). Look for any of the discovery aliases above.
+
+### 2. If found
+- Confirm it has a calendar-like table. Use `get_table_schema` to read the real fields and select options.
+- Use the team's real field names and IDs — don't try to rename or restructure their table.
+- Add or update rows there.
+
+### 3. If not found
+- Create the base `Marketing OS — Editorial Calendar` (via `create_base`).
+- Create the `Editorial Calendar` table with every field above in the order shown.
+- Pre-populate the single-select options for `Channel` and `Status` as listed.
+
+### 4. Adding rows (insert)
 For each planned piece from the campaign brief, insert a row:
-- `Name` — `<Program Name> — <Channel> Post`
-- `Status` — `Planning` (or `In progress` once drafting starts)
-- `Channels` — map to a real option (`LinkedIn - Company` for brand posts; the named options for individual authors)
-- `Target Audience` — map to an existing option (`C-Level Exec (Ops)` or `Data Engineer`)
+- `Title` / `Name` — `<Program Name> — <Channel> Post`
+- `Program` — from the brief
+- `Channel` — the channel for this piece
+- `Status` — `Drafted` (or `Planned` if the content isn't generated yet)
 - `Due date` — **REQUIRED for every row.** See rules below.
 - `Link` — relative path like `output/content/<program>/linkedin-post.md`
-- `Text` — the post copy once generated
-- `Pain Points` — the key pain the piece addresses
+- `Key Messages` — copy the brief's key messages
+- `Notes` — anything notable
 
-If a needed Channel or Target Audience option doesn't exist, ask the user before adding a new select option (these are team-owned).
+If a needed Channel or Status option doesn't exist in an existing team base, ask the user before adding a new select option (these are team-owned).
 
 ### Due Date Is Mandatory
 
@@ -65,28 +80,28 @@ Every row added to the editorial calendar **must** have a `Due date`. Never inse
 3. **If multiple pieces are in one brief and no per-piece schedule is given,** propose a sensible cadence (e.g. one per business day starting from the activity start date) and confirm before inserting.
 4. **Never default silently to today.** Always confirm.
 
-### Updating rows
-Match by `Name`. If multiple rows match, ask the user which to update.
+### 5. Updating rows
+Match by `Program` + `Channel` (or by `Title`/`Name` if those aren't both present). If multiple rows match, ask the user which to update.
 
 Common updates:
-- Sent for review → set `Status` to `For Nati's Review`
-- Review approved → set `Status` to `Approved by Nati`
-- Review requested changes → set `Status` to `In progress`
-- Graphics pending → set `Status` to `Text approved, waiting for graphics`
-- Content published → set `Status` to `Posted`, update `Link` to the live URL
+- Sent for review → status becomes `In Review` (or the team's equivalent)
+- Review approved → status becomes `Approved` (or the team's equivalent)
+- Review requested changes → status becomes `Changes Requested`, append notes
+- Content published → status becomes `Published` / `Posted`, update `Link` to the live URL
 
 ## Failure Modes
 
 - **No Airtable MCP connected:** tell the user *"I don't see an Airtable MCP connected. Connect one and I'll set up your editorial calendar."* Never fall back to creating a placeholder file.
-- **MCP connected but no permission:** tell the user the exact error and what permission to grant.
-- **Base/table not found:** confirm the IDs above are still valid; ask the user for the current base link before writing anything.
-- **Select option missing:** do not silently create new `Status`/`Channels`/`Target Audience` options — ask the user first, since this is a team-owned base.
+- **MCP connected but no permission to list bases:** tell the user the exact error and what permission to grant.
+- **Multiple bases match the aliases:** ask the user which one to use.
+- **Schema drift in an existing base:** add missing fields only with confirmation; do not rename or delete existing fields.
+- **Select option missing:** never silently create new `Status` / `Channel` options on a team-owned base — ask first.
 
 ## Hooks into the Marketing OS Workflow
 
 - **Step 7 of campaign workflow** (`CLAUDE.md`) → insert rows
 - **Content Review Workflow** (`CLAUDE.md`) → update status when reviews complete
-- **Publish time** → final status update to `Posted`
+- **Publish time** → final status update to `Published` / `Posted`
 
 ## Out of Scope
 

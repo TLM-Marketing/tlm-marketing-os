@@ -1,74 +1,48 @@
 # Brand Guidelines
 
 ## Brand Essence
-
-TLM.Marketing is where demand becomes revenue. Everything we say and do reflects a team that leads the GTM field — not follows it.
-
----
+TLM turns demand into revenue. We're an AI-native, revenue-first marketing partner for tech brands — operating as an extension of the client's team to build pipeline, fast.
 
 ## Voice & Tone
 
-**Overall character:** Confident, direct, and results-first. Bold without being arrogant. We speak like practitioners, not consultants.
+### Voice (consistent across all content)
+- **Simple and clear.** Say it plainly. Short words, short sentences. If a reader has to re-read it, rewrite it.
+- **Confident, not arrogant.** We've generated $70M+ in pipeline. We let results speak; we don't trash anyone.
+- **Revenue-first.** Tie everything back to pipeline and revenue, not vanity metrics.
+- **Bold.** We rewrite playbooks instead of following them. We're not afraid of a sharp point of view.
+- **Human.** Write like you're talking to a smart colleague, not presenting to a boardroom.
 
-**Formal vs. casual:** Professional but not stiff. We write the way sharp operators talk.
+### Tone (adapts by context)
+- **LinkedIn / thought leadership:** Confident and conversational. Share real GTM lessons and results.
+- **X / Twitter:** Sharp, concise, opinionated. Hot takes on AI + GTM are welcome. No corporate speak.
+- **Blog posts:** Educational and generous. Teach something real about AI-native GTM. Show, don't tell.
+- **Sales enablement:** Direct and benefit-focused. Lead with what the prospect gains.
 
-**Technical vs. simple:** Comfortable with GTM and AI terminology, but always tied to outcomes — pipeline, revenue, meetings.
+## Messaging Pillars
 
-**Edgy vs. safe:** Edgy. We challenge conventional marketing thinking.
+### 1. Turning Demand Into Revenue
+Brand, demand, and sales activation connected into one full-funnel journey — first touch to closed won.
 
-**Key phrase that captures the voice:** *"We don't follow playbooks — we rewrite them."*
+### 2. AI-Native by Default
+Deep AI integration and constant experimentation. We build the AI revenue engine; the client owns it — no new hires.
 
----
+### 3. An Extension of Your Team
+Shared KPIs, proactive collaboration, end-to-end ownership. One team, one KPI: revenue.
 
-## Messaging Principles
+### 4. Proven Results
+$70M+ in qualified pipeline for leading tech companies. SDR-level output at a fraction of the cost.
 
-- Lead with outcomes, not activities
-- Use action-oriented verbs: Turning, Driving, Building, Activating
-- Anchor claims in proof: $70M+ pipeline generated
-- Position as a partner, not a vendor: "extension of your team"
-- Revenue is the north star — every message connects back to pipeline
+## Writing Rules
+- Keep it simple — short words, short sentences (under 20 words when possible)
+- Use active voice
+- Use "you" and "your" — speak to the reader directly
+- Use numbers and specifics over vague claims ("$70M+ pipeline", "half the cost")
+- Always include a clear CTA — usually "Schedule a 20-min strategy call"
+- Avoid: "leverage", "synergy", "best-in-class", "cutting-edge", "revolutionize"
+- Signature terms: **Demand Activation™**, "Turning demand into revenue", "AI-native", "revenue-first", "full-funnel", "Sales Accepted Meetings"
 
----
-
-## Words & Phrases We Use
-
-- Demand Activation™
-- AI-native
-- Revenue-first
-- Full-funnel
-- Intent → pipeline
-- Dark-funnel intent
-- GTM engine
-- Sales Accepted Meetings
-- Scalable
-
----
-
-## Words & Phrases We Avoid
-
-_To be filled in by the team._
-
----
-
-## Visual Style
-
-**Direction (inferred from website):**
-- Dark, tech-forward aesthetic
-- Clean and modern — minimal clutter
-- Strong use of contrast
-- Data and proof points displayed prominently
-- Professional imagery that signals scale and sophistication
-
-**Brand colors:** To be confirmed by design team.
-
-**Photography direction:** To be confirmed by design team.
-
----
-
-## Image Generation Notes
-
-When generating images for TLM.Marketing content:
-- Use dark backgrounds with high-contrast accents
-- Tech-forward visual language (data flows, network nodes, clean UI elements)
-- Avoid stock-photo clichés — no generic handshakes or laptop photos
-- Tone: premium, innovative, results-oriented
+## Visual Identity Notes
+- **Primary color:** Pink (brand accent — bold, high-energy)
+- **Look & feel:** Modern, clean, tech-forward; dark backgrounds with pink accents work well
+- **Typography:** Clean sans-serif
+- **Imagery:** Modern and bold. Abstract tech/data motifs, real people in real work settings. No stock-photo handshakes.

@@ -1,20 +1,12 @@
-# Product Brief: AI GTM Engineering
+# Product Brief — AI GTM Engineering
 
-**Type:** Service
-**Tagline:** We build your AI revenue engine
+**What it is:** TLM builds the client's AI revenue engine — the systems, agents, and stack that run modern GTM.
 
-## What It Does
-Builds, operates, and transfers a complete AI-powered GTM system. The outcome is a scalable revenue engine the client owns — with no new hires required.
-
-## Three Phases
+**Phases:**
 - **Build:** GTM systems, AI agents, secure stack
-- **Operate:** Run campaigns, tune prompts, coach team
+- **Operate:** Run campaigns, tune prompts, coach the client team
 - **Transfer:** Handover, workflows, dashboards
 
-## Key Messages
-- AI agents purpose-built for GTM
-- Scalable and yours — not a black box
-- No new headcount needed
+**Outcome:** A scalable GTM engine the client owns — no new hires required.
 
-## Target Audience
-CMOs who want to build AI agents and scale GTM without growing their team.
+**Who it's for:** Tech companies that want an AI-native revenue engine without building it in-house.

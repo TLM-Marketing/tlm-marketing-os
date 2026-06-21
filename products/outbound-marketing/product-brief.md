@@ -1,16 +1,13 @@
-# Product Brief: Outbound Marketing
+# Product Brief — Outbound Marketing
 
-**Type:** Service
-**Tagline:** Turning dark-funnel intent into Sales Accepted Meetings
+**What it is:** Turning dark-funnel intent into Sales Accepted Meetings.
 
-## What It Does
-Intent-triggered outbound sequences with messaging built to drive replies and faster sales cycles. SDR-level output at half the cost — includes the data, tech, and workflows.
-
-## Key Messages
-- Triggered by real-time intent signals
+**What's included:**
+- Sequences triggered by real-time intent
 - Messaging that drives replies & faster cycles
 - SDR-level output at half the cost
-- Everything included: data, tech, workflows
+- Comes with the data, tech, and workflows
 
-## Target Audience
-Tech companies that want pipeline from outbound without building a large SDR team.
+**Outcome:** Sales Accepted Meetings from accounts showing real buying intent.
+
+**Who it's for:** Tech companies that want pipeline from outbound without staffing a full SDR team.

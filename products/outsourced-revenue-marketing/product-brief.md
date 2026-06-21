@@ -1,16 +1,13 @@
-# Product Brief: Outsourced Revenue Marketing
+# Product Brief — Outsourced Revenue Marketing
 
-**Type:** Service
-**Tagline:** Your GTM engine — Built, run & optimized by experts
+**What it is:** The client's full GTM engine — built, run & optimized by TLM experts.
 
-## What It Does
-Full-stack GTM execution — end-to-end ownership of inbound, outbound, and analytics. AI-native and fully integrated. One team, one KPI: revenue.
-
-## Key Messages
+**What's included:**
 - Full-stack execution, end-to-end ownership
-- AI-native inbound, outbound & analytics — fully integrated
+- AI-native inbound, outbound & analytics, fully integrated
 - GTM playbooks that speed up pipeline
 - One team. One KPI: revenue
 
-## Target Audience
-Tech companies that want to outsource their entire revenue marketing function to a partner that operates as an extension of the team.
+**Outcome:** A complete, outsourced revenue marketing function aligned to a single KPI — revenue.
+
+**Who it's for:** Tech companies that want the impact of a full in-house GTM team at a fraction of the cost.
